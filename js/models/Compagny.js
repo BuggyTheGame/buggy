@@ -91,7 +91,7 @@ class Compagny
     }
     compute_new_reward()
     {
-        let new_reward = (this.modifier*(this.devs*0.5+2))
+        let new_reward = (this.modifier*(this.devs*0.5))
         this.reward = Math.floor(new_reward);
     }
     compute_dev_price()

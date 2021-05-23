@@ -22,7 +22,7 @@ body
     padding: 2px;
 
 }
-.infos-interface
+.hack-interface
 {
     background-color: var(--black_bg);
     width: var(--panel_width);
@@ -108,7 +108,7 @@ th
 }
 .sub-cmd
 {
-    padding-top: 2px;
+    margin-top: 12px;
 }
 .terminal-user
 {

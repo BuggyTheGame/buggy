@@ -16,7 +16,7 @@ $(document).ready(function(){
         var keycode = (event.keyCode ? event.keyCode : event.which);
         if(keycode == '13'){
             let output = execute($(this).val())
-           $(".terminal-out").append(output);
+           $("#command-terminal").append(output);
            $(this).val('');
         }
     });

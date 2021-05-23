@@ -9,6 +9,7 @@
     </head>
     <div class="col">
         <div class="row">
+            <!-- informations terminal -->
             <div class="ext-interface border">
                 <div class="terminal-body">
                     <div class="col">
@@ -39,12 +40,35 @@
                     </div>
                 </div>
             </div>
-            <div class="infos-interface border"></div>
+            <!-- hacking terminal -->
+            <div class="hack-interface border">
+                <div class="terminal-body">
+                    <div class="col">
+                        <div class="terminal-out col">
+                            <div class="sub-cmd">
+                                <div class="submited-cmd row">
+                                <div class="prefix"> yanis@buggy:</div>~$ echo hello
+                                </div>
+                                <div class="cmd-return">
+                                    hello
+                                </div>
+                            </div>
+                        </div>
+                        <div class="terminal-input">
+                            <div class="row">
+                                <div class="terminal-user"><span class="prefix">yanis@buggy:</span>~$ </div>
+                                <div class="terminal-cmd"><input class="cmd-input" type="text"/></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- main terminal -->
         <div class="terminal border">
             <div class="terminal-body">
                 <div class="col">
-                    <div class="terminal-out col">
+                    <div class="terminal-out col" id="command-terminal">
                         <div class="sub-cmd">
                             <div class="submited-cmd row">
                             <div class="prefix"> yanis@buggy:</div>~$ echo hello

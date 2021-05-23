@@ -51,7 +51,7 @@ class AptCommand
             let final_str = ""
             for(let i = 0; i<item_list.length;i++)
             {
-                final_str += item_list[i]['id']+ "| "+item_list[i]['item_name']+ " / x"+item_list[i]['item_modifier']+"\n"
+                final_str += item_list[i]['id']+ "| "+item_list[i]['item_name']+ " | x"+item_list[i]['item_modifier']+" | "+ item_list[i]['item_price'] +" bugs \n"
             }
             return final_str
         }
@@ -59,16 +59,16 @@ class AptCommand
         {
             if(document.compagny.update_modifier(Number(splited_args[1])))
             {
-                return "Everything is ok"
+                return "Le paquet "+splited_args[1]+" a été correctement installé"
             }
             else
             {
-                return "Petit filou, tu l'as déjà"
+                return "Tu n'es pas assez buggé ou tu as déjà acheté ce module"
             }
         }
         else
         {
-            return "Défauts d'argument"
+            return "Défauts d'argument -> man apt"
         }
     }
 }

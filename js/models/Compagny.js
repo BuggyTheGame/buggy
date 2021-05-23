@@ -102,6 +102,14 @@ class Compagny
     update_modifier(item_id)
     {
         let r = getURL(ApiURL.COMP_URL, "item_id="+ item_id +"&action=getitem")['result'][0]
+
+        //check if the item can be bought
+        if(!this.check_balance(Number(r['item_price'])))
+        {
+            return false
+        }
+
+        //update the global modifier
         this.modifier = parseFloat(r['item_modifier']) * this.modifier
 
         let new_vault = getURL(ApiURL.COMP_URL, "new_item="+item_id+"&comp_id="+this.id+"&new_modifier="+this.modifier+"&action=updatevault");
@@ -111,6 +119,9 @@ class Compagny
             return false
         }
         this.vault = new_vault['result']
+        let actual_b = this.balance
+        this.balance = actual_b - Number(r['item_price'])
+        this.update_display()
         return true
     }
 

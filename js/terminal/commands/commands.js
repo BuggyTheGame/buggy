@@ -20,8 +20,14 @@ class RebootCommand
 {
     reboot(args)
     {
-        let text = "J'ai reboot batard"
-        return text
+        if(document.compagny.reboot())
+        {
+            return "Machines correctement redémarrées"
+        }
+        else
+        {
+            return "Hephep, les machines ont déjà été redémarrées"
+        }
     }
 }
 

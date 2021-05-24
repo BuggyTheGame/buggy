@@ -63,5 +63,11 @@ require("../../database.php");
 
 
         }
+        if($_POST['action'] == "reboot")
+        {
+            $db->push("UPDATE compagny set comp_dohack=1 WHERE id=?", array($_POST['comp_id']));
+            header('Content-Type: application/json');
+            echo json_encode(['result' => "ok"]);
+        }
     }
 ?>

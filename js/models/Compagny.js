@@ -14,6 +14,7 @@ class Compagny
         this.att_coeff = parseFloat(info['comp_att_coef'])
         this.def_coeff = parseFloat(info['comp_def_coef']);
         this.hackers = Number(info['comp_hackers']);
+        this.do_hack = Number(info['comp_dohack'])
         this.level = Number(info['comp_level']);
         this.devs = Number(info['comp_devs']);
         this.reward = Number(info['comp_reward'])
@@ -56,7 +57,7 @@ class Compagny
     }
     check_n_set_restart()
     {
-        if(this.do_restart == 0)
+        if(!this.do_restart)
         {
             document.getElementById("do-restart").innerHTML = "Non redémarrées";
             document.getElementById("do-restart").classList.add("orange");
@@ -141,6 +142,22 @@ class Compagny
     {
         let items_list = getURL(ApiURL.COMP_URL, 'action=getitem')['result']
         return items_list
+    }
+    reboot()
+    {
+        if(!this.do_restart)
+        {
+            getURL(ApiURL.COMP_URL, "comp_id="+this.id+"&action=reboot")
+            this.do_restart = 1
+
+            this.check_n_set_restart()
+
+            return true
+        }
+        else
+        {
+            return false
+        }
     }
 }
 
